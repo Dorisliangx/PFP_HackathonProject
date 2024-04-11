@@ -2,6 +2,6 @@
 <navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    Weixin
+    Weixin 客户绿宝石的客户女
   </view>
 </scroll-view>
