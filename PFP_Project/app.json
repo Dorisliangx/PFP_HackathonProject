@@ -1,0 +1,50 @@
+{
+  "pages": [
+				"pages/mydream/mydream",
+        "pages/adddream/adddream",
+        "pages/tadream/tadream",
+        "pages/shareappmessage/shareappmessage",
+        "pages/modification/modification",
+        "pages/login/login",
+        "pages/Completed/Completed",
+        "pages/minedata/minedata",
+        "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "个人理财"
+  },
+  "tabBar": {
+    "color": "#1485EE",
+    "selectedColor": "#FF514E",
+    "list": [
+        {
+            "pagePath": "pages/mydream/mydream",
+            "text": "我的愿望",
+            "iconPath": "image/04.png",
+            "selectedIconPath": "image/044.png"
+        },
+        {
+            "pagePath": "pages/minedata/minedata",
+            "text": "我的",
+            "iconPath": "image/06.png",
+            "selectedIconPath": "image/066.png"
+        }
+    ]
+},
+  "style": "v2",
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
