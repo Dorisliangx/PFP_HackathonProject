@@ -1,5 +1,10 @@
 {
   "pages": [
+        "pages/open/open",
+        "pages/calculate/calculate",
+        "pages/detail/detail",
+        "pages/invest/invest",
+        "pages/investDetail/investDetail",
 				"pages/mydream/mydream",
         "pages/adddream/adddream",
         "pages/tadream/tadream",
@@ -17,20 +22,26 @@
     "navigationBarTitleText": "个人理财"
   },
   "tabBar": {
-    "color": "#1485EE",
-    "selectedColor": "#FF514E",
+    "color": "#8a8a8a",
+    "selectedColor": "#1296db",
     "list": [
         {
-            "pagePath": "pages/mydream/mydream",
-            "text": "我的愿望",
-            "iconPath": "image/04.png",
-            "selectedIconPath": "image/044.png"
+            "pagePath": "pages/calculate/calculate",
+            "text": "定制计划",
+            "iconPath": "image/plan.png",
+            "selectedIconPath": "image/plan_yes.png"
+        },
+        {
+          "pagePath": "pages/invest/invest",
+          "text": "投资理财",
+          "iconPath": "image/invest.png",
+          "selectedIconPath": "image/invest_yes.png"
         },
         {
             "pagePath": "pages/minedata/minedata",
             "text": "我的",
-            "iconPath": "image/06.png",
-            "selectedIconPath": "image/066.png"
+            "iconPath": "image/me.png",
+            "selectedIconPath": "image/me_yes.png"
         }
     ]
 },
