@@ -11,7 +11,7 @@
                 <view>{{userinfo.nickName==datalist.inviterName?datalist.recipientName:datalist.inviterName || '暂无' }}</view>
            </view>
        </view> 
-       <view class="mine_title_button">我们已经相爱{{day}}天</view>
+       <view class="mine_title_button">我已进行个人理财{{day}}天</view>
     </view>
     <view class="mine_main">
         <view class="mine_main_cont" bindtap="router" data-id="{{openid==datalist.inviter?datalist.recipient:datalist.inviter}}" data-url="/pages/Completed/index">

@@ -1,0 +1,5 @@
+<!--pages/open/open.wxml-->
+<!-- <text>pages/open/open.wxml</text> -->
+<view class="splash" bindtap="onTap">
+  <image class="splash-image" src="/image/pic1.jpg"></image>
+</view>
