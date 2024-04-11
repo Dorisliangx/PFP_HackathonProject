@@ -2,6 +2,6 @@
 <navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    WeixinHELLO
+    WeixinHELLO非凡哥
   </view>
 </scroll-view>
