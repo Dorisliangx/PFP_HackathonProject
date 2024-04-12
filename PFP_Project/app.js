@@ -17,5 +17,3 @@ App({
       // 其他的 app onLaunch 初始化内容
     }
   })
-  
-

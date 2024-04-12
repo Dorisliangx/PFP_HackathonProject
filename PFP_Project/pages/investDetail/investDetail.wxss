@@ -1,1 +1,197 @@
-/* pages/investDetail/investDetail.wxss */
+/* pages/knowledgeDetail/knowledgeDetail.wxss */
+.page-container {
+  background-color: #F1F1F1;
+  min-height: 160vh;
+ 
+}
+.pic{
+  width:600rpx;
+  margin-top:120rpx;
+  margin-left:70rpx;
+  height:400rpx;
+
+
+}
+.title3{
+  width:95%;
+  margin-left:2.5%;
+  margin-top:30rpx;
+  font-size: 50rpx;
+  height:60rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.btn1{
+  border:1px solid white;
+  height:200rpx;
+  width:340rpx;
+  margin-left:190rpx;
+  margin-top:130rpx;
+  background-color: #FFB965;
+  font-size: 50rpx;
+  color:white;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.title4{
+ 
+  width:95%;
+  margin-left:2.5%;
+  margin-top:30rpx;
+  font-size: 40rpx;
+  height:60rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.center-text{
+  text-align: center;
+}
+.detail-card {
+  background-color: #ffffff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  /* 卡片内边距 */
+  border-radius: 10rpx;
+  /* 卡片圆角 */
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.1);
+  /* 卡片阴影 */
+}
+
+.title {
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 5rpx;
+  margin-top: 10rpx;
+}
+
+.info {
+  margin-bottom: 10rpx;
+}
+
+.author,
+.time {
+  font-size: 20rpx;
+  color: #999999;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.content {
+  font-size: 38rpx;
+  line-height: 1.6;
+}
+
+.image {
+  margin: 20rpx;
+  /* 左右边距 */
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  width: 70%;
+  margin-top: 20rpx;
+  max-width: calc(100% - 40rpx);
+  /* 最大宽度为父元素宽度减去左右边距 */
+  max-height: auto;
+  /* 自适应高度 */
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.btn-container {
+  position: fixed;
+  /* 固定在页面底部 */
+  bottom: 0;
+  /* 距离页面底部为 0 */
+  width: 100%;
+  /* 宽度占满整个页面 */
+  height: 8vh;
+  background-color: #ffffff;
+  /* 背景色 */
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+  /* 底部阴影效果 */
+}
+
+.btn-container .btn {
+  width: 50%;
+  /* 按钮宽度为页面宽度的一半 */
+  height: 50px;
+  /* 按钮高度 */
+  line-height: 50px;
+  /* 垂直居中 */
+  text-align: center;
+  /* 文字水平居中 */
+  font-size: 16px;
+  /* 字体大小 */
+  width: 45%;
+  /* 按钮宽度为一半 */
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 20rpx;
+  color: #ffffff;
+  /* 按钮文字颜色为白色 */
+}
+
+.btn-container .btn-left {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  height: 50%;
+  float: left;
+  /* 左浮动 */
+  background-color: #FFB965;
+  /* 橙色背景 */
+}
+.knowledge-image {
+
+  width: 600rpx;
+  height:400rpx;
+  border-radius: 10rpx;
+  /* width: 100%; */
+  /* 图片宽度填充父容器 */
+  /* height: auto; */
+  /* 高度自适应 */
+  /* max-width: 50%; */
+  /* 图片最大宽度为每个运动知识模块的左边四分之一位置 */
+}
+
+
+.btn-container .btn-right {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  height: 50%;
+  float: right;
+  background-color: #FFB965;
+}
+.navigation-bar{
+  width:100%;
+  height:40px;
+  background-color: #fff;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0 0px;
+}
+.title4{
+  font-size: 18px;
+  font-weight: bold;
+}
+.left-icon{
+  font-size: 16px;
+  color:#007bff;
+  cursor:pointer;
+  margin-top: 10rpx;
+  margin-left:30rpx;
+}

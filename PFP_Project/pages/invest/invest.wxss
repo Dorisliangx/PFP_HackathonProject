@@ -1,1 +1,167 @@
-/* pages/invest/invest.wxss */
+.container{
+  height:1410rpx;
+  background: rgb(239, 239, 245);
+  border:1px solid red;
+}
+.titleContainer{
+  /* border:1px solid blue; */
+  width: 300px;
+  display: flex;
+  height:70rpx;
+  align-items: flex-start;
+  /* border-top: 1px solid rgb(218, 123, 60); */
+  border-bottom: 1px solid rgb(218, 123, 60);
+  box-shadow: 0 2px 1px rgb(153, 151, 151);
+  
+}
+.title1{
+  /* border: 1px solid red; */
+  font-size:44rpx;
+  font-weight: bold;
+  color:#030303;
+  line-height: 70rpx;
+}
+
+.container2{
+   /* border: 1px solid green;  */
+  color: black;
+  height: 900rpx;
+  width: 300px;
+  margin: 0;
+}
+.page-container {
+  background-color: #F1F1F1;
+  /* height: 100%; */
+  min-height: 100vh;
+  /* 页面背景色为灰色 */
+}
+
+.search-bar {
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #ccc;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  background-color: #fff;
+}
+
+.search-icon {
+  margin-right: 10rpx;
+  width: 20rpx;
+  /* 调整图标宽度 */
+  height: 20rpx;
+  /* 调整图标高度 */
+}
+
+.search-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.knowledge-list {
+  padding: 0rpx;
+}
+.scrollCss{
+  height:880rpx;
+  /* border:1px solid red; */
+}
+.knowledge-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  /* 运动知识块背景色为白色 */
+  border-radius: 10rpx;
+  /* 边框圆角 */
+  margin-bottom: 25rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.left {
+  flex: 1;
+  width: 50%;
+  height: 20%;
+}
+
+.knowledge-image {
+  margin-left: 20rpx;
+
+  margin-top: 10rpx;
+  width: 150rpx;
+  height:120rpx;
+  border-radius: 10rpx;
+  /* width: 100%; */
+  /* 图片宽度填充父容器 */
+  /* height: auto; */
+  /* 高度自适应 */
+  /* max-width: 50%; */
+  /* 图片最大宽度为每个运动知识模块的左边四分之一位置 */
+}
+
+.middle {
+  flex: 3;
+  padding-left: 20rpx;
+}
+
+.right {
+  flex: 1;
+  text-align: right;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15rpx;
+
+  color: #272525;
+
+  /* border:1px solid red; */
+}
+.title3{
+  /* border: 1px solid red; */
+  font-size:24rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  font-weight: normal;
+  color:#ad752a;
+  line-height: 28rpx;
+ 
+}
+.summary {
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  /* 显示的行数 */
+  overflow: hidden;
+  /* 溢出隐藏 */
+  text-overflow: ellipsis;
+  /* 溢出时显示省略号 */
+}
+
+.detail {
+  margin-right: 20rpx;
+  font-size: 13px;
+  bottom: 10rpx;
+  right: 10rpx;
+  color: #FFB965;
+  border: 1rpx solid #FFB965;
+  border-radius: 20rpx;
+  padding: 5rpx 10rpx;
+  /* padding: 10rpx 32rpx; */
+}
+
+.no-result {
+  text-align: center;
+  margin-top: 20rpx;
+  color: #999;
+}

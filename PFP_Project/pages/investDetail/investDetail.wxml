@@ -1,2 +1,29 @@
-<!--pages/investDetail/investDetail.wxml-->
-<text>pages/investDetail/investDetail.wxml</text>
+<!--pages/knowledgeDetail/knowledgeDetail.wxml-->
+<!-- <text>pages/knowledgeDetail/knowledgeDetail.wxml</text> -->
+<view class="page-container">
+<view class="navigation-bar">
+<view class="left-icon" bindtap="navigateBack">退回</view>
+<view class="title4"></view>
+</view>
+  <view class="pic" style="background-image: url('');">
+  <image class="knowledge-image" src="../../image/01.png" mode="aspectFill"></image>
+  </view>
+  
+  <view class="title3">
+  <text class="center-text">投资一{{knowledge.title}}</text>
+
+  </view>
+  <view class="title4">
+  <text class="center-text3">投资一是一个好的民生企业</text>
+
+  </view>
+ <view class="btn1">去投资</view>
+</view>
+<!-- 底部按钮 -->
+<view class="btn-container">
+    <!-- 加入收藏按钮 -->
+    <!-- <button class="btn btn-left" bindtap="handleCollect">{{ collectText}}</button>
+
+    <!-- 分享按钮 -->
+    <!-- <button class="btn btn-right" bindtap="handleShare"></button> --> 
+</view>

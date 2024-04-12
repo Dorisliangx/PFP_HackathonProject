@@ -18,14 +18,13 @@
             <view class="mine_main_cont_top">已实现愿望</view>
             <view class="mine_main_cont_left"></view>
         </view>
-       
-        <view class="mine_main_cont" bindtap="router" data-id="{{datalist._id}}" data-url="/pages/modification/index" bindtap="gotoOnGoingPage">
-            <view class="mine_main_cont_top" >正在进行的计划</view>
+        <view class="mine_main_cont" bindtap="router" data-id="{{datalist._id}}" data-url="/pages/modification/index">
+            <view class="mine_main_cont_top" >纪念日</view>
             <view class="mine_main_cont_right"></view>
         </view>
     </view>
 </view>
-<!-- <view class="add_Mask" wx:if="{{maskshow}}">
+<view class="add_Mask" wx:if="{{maskshow}}">
     <view class="add_Mask_content">
         <view class="add_Mask_content_top">修改Ta</view>
         <view class="add_Mask_content_cont">是否确认修改Ta？如果确认，双方将清空所有信息，请提前备份</view>
@@ -34,4 +33,4 @@
             <view class="add_Mask_content_button_cancel" bindtap="offMask">放弃修改</view>
         </view>
     </view>
-</view> -->
+</view>

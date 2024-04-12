@@ -43,24 +43,3 @@
     height: 30px!important;
     margin-top: 3px!important;
 }
-.container {
-  margin-left: 20px !important; /* 为容器添加内边距 */
-  
-}
-
-.date-picker .picker .space {
-  margin-right: 37px; /* 调整目标日期和 {{date}} 之间的间距 */
-}
-.date-picker .space1 {
-  margin-top: 15px; /* 调整目标日期和 {{date}} 之间的间距 */
-}
-
-/* 自定义按钮样式 */
-.weui-btn_primary {
-  width: 200rpx; /* 设置按钮宽度 */
-  background-color: #1AAD19; /* 设置按钮背景颜色 */
-  color: #FFFFFF; /* 设置按钮文字颜色 */
-  left: -15rpx;
-}
-
-

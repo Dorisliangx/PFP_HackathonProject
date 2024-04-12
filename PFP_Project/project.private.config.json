@@ -3,18 +3,5 @@
   "projectname": "PFP3",
   "setting": {
     "compileHotReLoad": true
-  },
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/OnGoingPlan/OnGoingPlan",
-          "pathName": "pages/OnGoingPlan/OnGoingPlan",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
   }
 }

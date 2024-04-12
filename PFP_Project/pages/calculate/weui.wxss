@@ -1210,18 +1210,3 @@ icon {
     color: #09BB07;
     white-space: nowrap;
 }
-
-.logo {
-  width: 70%;
-  height: 120rpx;
-  display: flex;
-  margin-left: 330rpx;
-  align-items: center;
-}
-
-.logo-image {
-  width: 110rpx; /* 图片宽度占满整个父容器 */
-  height: 107rpx; /* 图片高度占满整个父容器 */
-  /* object-fit: cover; 图片等比例缩放，填充整个容器，可能会裁剪部分内容 */
-  
-}

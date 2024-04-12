@@ -1,6 +1,5 @@
 {
   "pages": [
-        "pages/login/login",
         "pages/open/open",
         "pages/calculate/calculate",
         "pages/detail/detail",
@@ -11,9 +10,9 @@
         "pages/tadream/tadream",
         "pages/shareappmessage/shareappmessage",
         "pages/modification/modification",
+        "pages/login/login",
         "pages/Completed/Completed",
         "pages/minedata/minedata",
-        "pages/OnGoingPlan/OnGoingPlan",
         "pages/index/index"
   ],
   "window": {
