@@ -1,0 +1,32 @@
+<!--pages/dreamlist/dreamlist.wxml-->
+
+<!-- 返回箭头 -->
+<view bindtap="gotoMinedata" style="margin-top: 60rpx;margin-left: 40rpx;">
+<image class="return" src="../../image/return.png"></image>
+</view>
+
+<view class="title">已完成计划</view>
+
+
+<block wx:for="{{result}}" wx:key="index">
+
+<!-- 包裹图片+两行文字 id="{{index}}"是给按下了那个item记录-->
+
+<view class="view_tupian_wenzi" bindtap="click" id="{{index}}">
+
+  <image class="image_1" src="../../image/dream_finish.png" />
+  
+  <!-- 包裹两行文字 -->
+  <view class="view_wenzi2">
+  
+    <text>{{item.name}}  {{item.time}}完成</text>
+    
+    <text class="text_small">{{item.content}} </text>
+    <text class="text_small">目标金额{{item.target}} 已攒{{item.sum}}</text>
+    
+  </view>
+  
+</view>
+</block>
+
+
