@@ -13,6 +13,7 @@
         "pages/login/login",
         "pages/Completed/Completed",
         "pages/minedata/minedata",
+        "pages/OnGoingPlan/OnGoingPlan",
         "pages/index/index"
   ],
   "window": {

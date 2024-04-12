@@ -1,0 +1,144 @@
+/* navigation-bar.wxss */
+.navigation-bar {
+    width: 60%;
+    height: 100px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .left-icon {
+    font-size: 16px;
+    color: #007bff; /* 按钮颜色可以根据需要自行调整 */
+    cursor: pointer;
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+  }
+  
+  /* page.wxss */
+  .container {
+    padding: 20px;
+  }
+  
+  .upper-container {
+    margin-bottom: 20px;
+  }
+
+  .scroll-y{
+    height: 1000rpx;
+  }
+  
+  .budget-container,
+  .saved-amount-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted rgb(190, 103, 44);
+  }
+  
+  .record-list {
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .record-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .add-button {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 24px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  .dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lower-container {
+    margin-top: 20px; /* 设置上边距 */
+    padding: 10px; /* 设置内边距 */
+    /* border: 1px solid #ccc;  */
+    width: 100%;
+  }
+  
+  .record-list {
+    margin-bottom: 20px; /* 设置下边距 */
+  }
+  
+  .record-item {
+    padding: 10px; /* 设置内边距 */
+    border-bottom: 1px solid #eee; /* 设置底部边框 */
+  }
+  
+  .record-item-left {
+    float: left; /* 左浮动 */
+  }
+  
+  .record-item-right {
+    float: right; /* 右浮动 */
+  }
+  
+  
+  .dialog-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .dialog input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* .budget-left{
+    color: rgb(190, 103, 44);
+
+  } */
+  .budget-container {
+    display: flex; /* 使用 Flex 布局 */
+    justify-content: space-between; /* 左右对齐 */
+  }
+  
+  .budget-left {
+    font-weight: bold; /* 设置字体为粗体 */
+    font-size: 40rpx;
+    color: rgb(190, 103, 44);
+  }
+  
+  .dialog button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
