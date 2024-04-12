@@ -5,161 +5,83 @@ Page({
     onShareAppMessage: Util.shareConfig,
     data: {
         amount: 0,
-        dayType: '天',
-        dateLong: 0,
-        // 各种期
-        xxDay: 0,
-        // 各种费
-        xxMoney1: 0, // 元
-        xxMoney2: 0, // %
-        // 预期利率
-        falseRate: 0,
-        // 预期收益
-        falseIncome: 0,
-        // 真实利率
-        trueRate: 0,
-        // 真实收益
-        trueIncome: 0
-    },
-    // 选择时长单位
-    selectDateType() {
-        let that = this
-        wx.showActionSheet({
-            itemList: ['天', '月', '年'],
-            success(res) {
-                let dayType = this.dayType
-
-                switch (res.tapIndex) {
-                    case 0:
-                        dayType = '天'
-                        break
-                    case 1:
-                        dayType = '月'
-                        break
-                    case 2:
-                        dayType = '年'
-                        break
-                }
-
-                that.setData({
-                    dayType: dayType
-                })
-
-                that.calcFn()
-            }
-        })
-    },
-    // 输入完毕调用
-    inputFn(e) {
-        // console.log(e)
-        let obj = {},
-            name = e.currentTarget.dataset.name,
-            val = e.detail.value
-
-        switch (name) {
-            case 'amount':
-                obj = { amount: val }
-                break
-            case 'falseRate':
-                obj = { falseRate: val }
-                break
-            case 'dateLong':
-                obj = { dateLong: val }
-                break
-            case 'xxDay':
-                obj = { xxDay: val }
-                break
-            case 'xxMoney1':
-                obj = { xxMoney1: val }
-                break
-        }
-
-        this.setData(obj)
-
-        this.calcFn() // 因为有微信的数字键盘，所以很放心不用担心输入不是数字？
-    },
-    calcFn() {
-        let amount = this.data.amount,
-            falseRate = this.data.falseRate,
-            dateLong = this.data.dateLong, // 投入时长，默认计算单位：天
-            xxMoney1 = this.data.xxMoney1,
-            xxDay = this.data.xxDay,
-            dayType = this.data.dayType,
-            minusDay = 0, // 各种要减的天
-            minusMoney = 0 // 各种要减的钱
-
-        if (amount == 0 || falseRate == 0 || dateLong == 0 || isNaN(dateLong)) {
-            this.setData({
-                falseIncome: 0,
-                trueIncome: 0,
-                trueRate: 0
-            })
-            return
-        }
-
-        if (dayType == '月') dateLong = dateLong * 30
-
-        if (dayType == '年') dateLong = dateLong * 365
-
-        if (xxMoney1 > 0) minusMoney = xxMoney1
-
-        if (xxDay > 0) minusDay = xxDay
-
-        // 预期收益
-        let falseIncome = amount * falseRate * 0.01 * (dateLong / 365)
-
-        dateLong = parseInt(dateLong)
-
-        minusMoney = parseFloat(minusMoney)
-
-        falseIncome = parseFloat(falseIncome)
-
-        // 真实收益(预期收益减去损耗费用)
-        let trueIncome = falseIncome - minusMoney
-
-        // 真实利率
-        // 如果没有各种扣扣扣，为了不让计算真实利率的公式出错。直接等于预期利率
-        let trueRate = falseRate
-        if (falseIncome != trueIncome || minusDay > 0) {
-            trueRate = trueIncome / (amount * (dateLong + minusDay) / 365) * 1000
-            // 因为填了损耗金额，会导致莫名其妙的真实收益率计算出错，所以这么着，原因暂时不知
-            if (minusMoney > 0) trueRate = trueRate * 0.1
-            trueRate = Util.numberComma(trueRate.toFixed(2))
-        }
-
-
-        // console.log('预期收益falseIncome', falseIncome)
-        // console.log('真实收益trueIncome', trueIncome)
-        // console.log('真实利率trueRate', trueRate)
-
-        falseIncome = Util.numberComma(falseIncome.toFixed(2))
-        trueIncome = Util.numberComma(trueIncome.toFixed(2))
-
-        this.setData({
-            falseIncome: falseIncome,
-            trueIncome: trueIncome,
-            trueRate: trueRate
-        })
+        startDte:"2024-04-12",
+        date:'', //用户选择的目标日期
+        targetAmount:0,
+        monthlyIncome:0,
+        monthlyExpenses:0,
+        result:0,
+        monthlyTarget: 0,
+        disposableIncome: 0
     },
     onLoad() {
+        this.setData({
+            startDate: this.getTodayDate()  // 设置当前日期为起始日期
+        });
         wx.setNavigationBarTitle({ title: '计算器' })
+    },
+    getTodayDate() {
+        const today = new Date();
+        return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    },
+    inputFn(e) {
+      // 使用 e.currentTarget.dataset.name 来识别是哪个输入
+      const name = e.currentTarget.dataset.name;
+      const value = parseFloat(e.detail.value);
+      this.setData({ [name]: value });  // 动态更新数据
+    },
+    // 日期选择器变化时触发的事件处理函数
+    bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value // 更新页面数据中的日期值为选择的日期
+    });
+    },
+    // onLoad() {
+    //   wx.setNavigationBarTitle({ title: '计算器' })
+    // },
+    daysBetween(startDate, endDate) {
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      const diffTime = Math.abs(end - start);
+      return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  },
+  calculate() {
+      const { targetAmount, monthlyIncome, monthlyExpenses, date, startDate } = this.data;
+      const daysDiff = this.daysBetween(startDate, date);
+      const monthsDiff = Math.ceil(daysDiff / 30);  // 简单把每月按30天算
+      const monthlyTarget = targetAmount / monthsDiff;
+      const disposableIncome = monthlyIncome - monthlyExpenses;
+      const result = disposableIncome - monthlyTarget;
+      this.setData({
+          monthlyTarget: monthlyTarget.toFixed(2),
+          disposableIncome: disposableIncome.toFixed(2),
+          result: result.toFixed(2)
+      });
+     
 
-        // 测试
-        // this.setData({
-        //     amount: 10000,
-        //     dateLong: 30,
-        //     falseRate: 9.8,
-        // })
-        // this.calcFn()
+      // 判断结果正负，显示不同的弹窗
+      if (result < 0) {
+          // 更新全局变量
+          const app = getApp();
+          app.globalData.monthsDiff = monthsDiff;  // 存储结果到全局变量
+          wx.showModal({
+              title: '额外收入需要',
+              content: `你每月需要额外投资收入：${Math.abs(result).toFixed(2)}元`,
+              showCancel: false,
+              confirmText: '我知道了'
+          });
+      } else {
+          wx.showModal({
+              title: '存款计划',
+              content: '您的每月存取金额可以达到目标金额计划！',
+              showCancel: false,
+              confirmText: '太好了'
+          });
+      }
 
-        // var that = this
-        // //调用应用实例的方法获取全局数据
-        // app.getUserInfo(function(userInfo) {
-        //     //更新数据
-        //     that.setData({
-        //         userInfo: userInfo
-        //     })
-
-        // })
-    }
+      console.log(`所需月份数: ${monthsDiff}`);
+      console.log(`每月存下金额: ${monthlyTarget.toFixed(2)}元`);
+      console.log(`每月可支配金额: ${disposableIncome.toFixed(2)}元`);
+      console.log(`所需结果（可支配金额 - 每月目标金额）: ${result.toFixed(2)}元`);
+  }
 })
