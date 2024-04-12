@@ -5,7 +5,7 @@ Page({
         wx.switchTab({
           url: '/pages/calculate/calculate'
         });
-      }, 9000);
+      }, 3000);
     },
     // 点击任意地方触发跳转
     onTap: function () {

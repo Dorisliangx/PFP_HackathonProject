@@ -1,9 +1,13 @@
 <!--pages/login/login.wxml-->
-<view class="login">
-    <view class="login_title">
-        <image src="../../image/01.png"></image>
-        <view></view>
-    </view>
-    <view class="login_button" bindtap="login">开启</view>
+<!-- pages/login/login.wxml -->
+<view class="container">
+  <view class="user-form">
+    <image src="../../image/loginlogo.png" style="width: 200rpx; height: 180rpx; margin-left: 30%;"></image>
+    <input name="username" placeholder="请输入用户名" bindinput="bindInput" data-field="username" />
+    <input name="password" type="password" placeholder="请输入密码" bindinput="bindInput" data-field="password" />
+    <button bindtap="register">注册</button>
+    <button bindtap="login">登录</button>
+  </view>
 </view>
+
 
