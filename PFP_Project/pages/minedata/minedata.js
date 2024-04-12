@@ -15,6 +15,13 @@ Page({
 
   },
 
+  gotoOnGoingPage: function() {
+    // 在这里编写跳转到detail页的逻辑
+    wx.navigateTo({
+        url: '/pages/OnGoingPlan/OnGoingPlan',
+    });
+},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
